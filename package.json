@@ -1,0 +1,46 @@
+{
+  "name": "jaf",
+  "version": "1.0.0",
+  "description": "Adventures in Functional JavaScript",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "clean": "prettier --write README.md SUMMARY.md doc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quacksouls/jaf.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "functional programming"
+  ],
+  "author": "Duck McSouls",
+  "license": "CC BY-NC-SA 4.0",
+  "bugs": {
+    "url": "https://github.com/quacksouls/jaf/issues"
+  },
+  "homepage": "https://github.com/quacksouls/jaf",
+  "devDependencies": {
+    "eslint": "^8.40.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-markdown": "^3.0.0",
+    "eslint-plugin-markdownlint": "^0.4.1",
+    "eslint-plugin-md": "^1.0.19",
+    "eslint-plugin-prettier": "^4.2.1",
+    "gitbook-plugin-mathjax": "^1.1.2",
+    "honkit": "^4.0.7",
+    "markdownlint": "^0.28.2",
+    "mathjax": "^2.7.6",
+    "prettier": "2.8.8"
+  },
+  "dependencies": {
+    "gitbook-plugin-code": "^0.1.0",
+    "gitbook-plugin-codeblock-filename": "^0.0.9"
+  }
+}
