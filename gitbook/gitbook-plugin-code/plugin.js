@@ -1,3 +1,6 @@
+// Code by David Moreno García
+// https://github.com/davidmogar/gitbook-plugin-code
+
 require(['gitbook', 'jQuery'], function(gitbook, $) {
 
   const TERMINAL_HOOK = '**[terminal]'
@@ -36,22 +39,28 @@ require(['gitbook', 'jQuery'], function(gitbook, $) {
   }
 
   function format_code_block(block) {
-    /*
-     * Add line numbers for multiline blocks.
-     */
-    code = block.children('code');
-    lines = code.html().split('\n');
+    // This function cannot handle multiline comments that use the
+    // documentation style "/** */".  The new code at
+    //
+    // https://github.com/lionelee/gitbook-plugin-codeline
+    //
+    // doesn't solve the problem.
+    // /*
+    //  * Add line numbers for multiline blocks.
+    //  */
+    // code = block.children('code');
+    // lines = code.html().split('\n');
 
-    if (lines[lines.length - 1] == '') {
-      lines.splice(-1, 1);
-    }
+    // if (lines[lines.length - 1] == '') {
+    //   lines.splice(-1, 1);
+    // }
 
-    if (lines.length > 1) {
-      console.log(lines);
-      lines = lines.map(line => '<span class="code-line">' + line + '</span>');
-      console.log(lines);
-      code.html(lines.join('\n'));
-    }
+    // if (lines.length > 1) {
+    //   console.log(lines);
+    //   lines = lines.map(line => '<span class="code-line">' + line + '</span>');
+    //   console.log(lines);
+    //   code.html(lines.join('\n'));
+    // }
 
     // Add wrapper to pre element
     wrapper = block.wrap('<div class="code-wrapper"></div>');
