@@ -1,5 +1,7 @@
+*.html
 *.json
 .git/
 _book/
 gitbook/
+image/
 node_modules/
