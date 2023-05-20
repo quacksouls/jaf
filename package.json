@@ -42,8 +42,5 @@
     "markdownlint": "^0.28.2",
     "mathjax": "^2.7.6",
     "prettier": "2.8.8"
-  },
-  "dependencies": {
-    "gitbook-plugin-codeblock-filename": "^0.0.9"
   }
 }
