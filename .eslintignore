@@ -1,0 +1,5 @@
+*.json
+.git/
+_book/
+gitbook/
+node_modules/
