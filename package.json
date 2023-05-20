@@ -7,7 +7,7 @@
     "doc": "doc"
   },
   "scripts": {
-    "clean": "prettier --write README.md SUMMARY.md doc",
+    "clean": "prettier --write README.md SUMMARY.md",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -33,7 +33,11 @@
     "eslint-plugin-markdownlint": "^0.4.1",
     "eslint-plugin-md": "^1.0.19",
     "eslint-plugin-prettier": "^4.2.1",
+    "gitbook-plugin-ace": "^0.3.2",
+    "gitbook-plugin-chollapse": "^1.0.1",
+    "gitbook-plugin-include-codeblock": "^3.2.3",
     "gitbook-plugin-mathjax": "^1.1.2",
+    "gitbook-plugin-octocat": "^1.0.2",
     "honkit": "^4.0.7",
     "markdownlint": "^0.28.2",
     "mathjax": "^2.7.6",

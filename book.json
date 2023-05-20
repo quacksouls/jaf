@@ -1,8 +1,21 @@
 {
     "plugins": [
-        "code",
-        "codeblock-filename",
-        "codetabs",
-        "mathjax"
-    ]
+        "chollapse",
+        "include-codeblock",
+        "ace",
+        "mathjax",
+        "octocat"
+    ],
+    "pluginsConfig": {
+        "include-codeblock": {
+            "check": false,
+            "edit": false,
+            "lang": "javascript",
+            "template": "acefull",
+            "theme": "monokai"
+        },
+        "octocat": {
+            "url": "https://github.com/quacksouls/jaf"
+        }
+    }
 }
