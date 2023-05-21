@@ -1,7 +1,10 @@
 # Simple examples
 
 This section presents various simple examples to demonstrate the functional way
-of thinking.
+of thinking. The demonstration consists of toy examples and do not showcase all
+that functional programming has to offer. Don't worry if you find the
+declarative JavaScript code incomprehensible at the moment. The remainder of the
+book is meant to help you learn the functional way of programming.
 
 ## Sum it up
 
