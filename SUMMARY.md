@@ -6,3 +6,4 @@
 - [Why functional programming?](doc/intro/README.md)
   - [Benefits of FP](doc/intro/benefit.md)
   - [Simple examples](doc/intro/simple-eg.md)
+  - [Exercises](doc/intro/exercise.md)
