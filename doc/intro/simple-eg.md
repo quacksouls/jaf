@@ -34,3 +34,15 @@ The functional program says this.
 We describe the result we want. The looping is delegated to the array method
 [`reduce()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
 and we tell it to use the function `add()` to obtain the cumulative sum.
+
+## Sum even integers
+
+Here's a variation on the summing problem from the section
+[_Sum it up_](simple-eg.md#sum-it-up). Add together all even numbers in an array
+of random integers. A step-by-step description might be something like:
+
+[import](code/ransum-imperative.js)
+
+A declarative version might be something along the line of:
+
+[import](code/ransum-functional.js)
