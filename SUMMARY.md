@@ -2,6 +2,7 @@
 
 <!-- prettier-ignore -->
 - [Adventures in Functional JavaScript](README.md)
+- [Preface](doc/preface/README.md)
   - [Run code examples](doc/preface/run.md)
 - [Why functional programming?](doc/intro/README.md)
   - [Benefits of FP](doc/intro/benefit.md)
