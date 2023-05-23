@@ -2,5 +2,5 @@
 
 # Run this script to view your changes locally.
 
-./build.sh
+npm run clean
 npx honkit serve
