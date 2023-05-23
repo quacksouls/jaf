@@ -41,6 +41,7 @@
     "gitbook-plugin-octocat": "^1.0.2",
     "gitbook-plugin-prism": "^2.4.0",
     "honkit": "^4.0.7",
+    "honkit-plugin-exercise": "^0.0.5",
     "markdownlint": "^0.28.2",
     "mathjax": "^2.7.6",
     "prettier": "2.8.8"

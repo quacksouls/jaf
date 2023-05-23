@@ -4,6 +4,7 @@
         "code",
         "include-codeblock",
         "ace",
+        "exercise",
         "mathjax",
         "octocat",
         "prism", "-highlight"
