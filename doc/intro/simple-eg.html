@@ -1,0 +1,488 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Simple examples · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.7">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chollapse/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="exercise.html" />
+    
+    
+    <link rel="prev" href="benefit.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Adventures in Functional JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../preface/">
+            
+                <a href="../preface/">
+            
+                    
+                    Preface
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../preface/run.html">
+            
+                <a href="../preface/run.html">
+            
+                    
+                    Run code examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Why functional programming?
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="benefit.html">
+            
+                <a href="benefit.html">
+            
+                    
+                    Benefits of FP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="simple-eg.html">
+            
+                <a href="simple-eg.html">
+            
+                    
+                    Simple examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="exercise.html">
+            
+                <a href="exercise.html">
+            
+                    
+                    Exercises
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Simple examples</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="simple-examples">Simple examples</h1>
+<p>This section presents various simple examples to demonstrate the functional way
+of thinking. The demonstration consists of toy examples and do not showcase all
+that functional programming has to offer. Don&apos;t worry if you find the
+declarative JavaScript code incomprehensible at the moment. The remainder of the
+book is meant to help you learn the functional way of programming.</p>
+<h2 id="sum-it-up">Sum it up</h2>
+<p>You have an array of all integers between 0 and 9, inclusive. How would you add
+together all numbers in the array? An imperative program to achieve the desired
+result might be as follows.</p>
+<div>
+    <div>
+        <a id="sum-imperative.js" href="code/sum-imperative.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>sum-imperative.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const num = [...Array(10).keys()];
+let total = 0;
+for (let i = 0; i &lt; num.length; i++) {
+    total += num[i];
+}
+console.log(total);<br></div></div>
+    <p></p>
+</div>
+
+
+<p>The above program describes step-by-step how to obtain the sum of integers in an
+array. The instructions can be summarized as follows.</p>
+<pre class="language-"><code>initially the total is 0
+for each element in the array
+    add the element to the running total
+</code></pre><p>Contrast the imperative program above with the functional version below.</p>
+<div>
+    <div>
+        <a id="sum-functional.js" href="code/sum-functional.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>sum-functional.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const num = [...Array(10).keys()];
+const add = (acc, curr) =&gt; acc + curr;
+const total = num.reduce(add, 0);
+console.log(total);<br></div></div>
+    <p></p>
+</div>
+
+
+<p>The functional program says this.</p>
+<pre class="language-"><code>add is the function to obtain cumulative sum
+reduce the array elements to a value, using the function add
+</code></pre><p>We describe the result we want. The looping is delegated to the array method
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce" target="_blank"><code>reduce()</code></a>
+and we tell it to use the function <code>add()</code> to obtain the cumulative sum.</p>
+<h2 id="sum-even-integers">Sum even integers</h2>
+<p>Here&apos;s a variation on the summing problem from the section
+<a href="simple-eg.html#sum-it-up"><em>Sum it up</em></a>. Add together all even numbers in an array
+of random integers. A step-by-step description might be something like:</p>
+<div>
+    <div>
+        <a id="ransum-imperative.js" href="code/ransum-imperative.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>ransum-imperative.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">let total = 0;
+for (let i = 0; i &lt; 10; i++) {
+    const n = Math.floor(100 * Math.random());
+    if (n % 2 === 0) {
+        total += n;
+    }
+}
+console.log(total);<br></div></div>
+    <p></p>
+</div>
+
+
+<p>A declarative version might be something along the line of:</p>
+<div>
+    <div>
+        <a id="ransum-functional.js" href="code/ransum-functional.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>ransum-functional.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const random = () =&gt; Math.floor(100 * Math.random());
+const randint = [...Array(10).keys()].map(() =&gt; random());
+const isEven = (x) =&gt; x % 2 === 0;
+const add = (acc, curr) =&gt; acc + curr;
+const total = randint.filter(isEven).reduce(add, 0);
+console.log(total);<br></div></div>
+    <p></p>
+</div>
+
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="benefit.html" class="navigation navigation-prev " aria-label="Previous page: Benefits of FP">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="exercise.html" class="navigation navigation-next " aria-label="Next page: Exercises">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Simple examples","level":"1.3.2","depth":2,"next":{"title":"Exercises","level":"1.3.3","depth":2,"path":"doc/intro/exercise.md","ref":"doc/intro/exercise.md","articles":[]},"previous":{"title":"Benefits of FP","level":"1.3.1","depth":2,"path":"doc/intro/benefit.md","ref":"doc/intro/benefit.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chollapse","code","include-codeblock","ace","exercise","mathjax","octocat","prism","-highlight"],"pluginsConfig":{"prism":{},"ace":{},"octocat":{"url":"https://github.com/quacksouls/jaf"},"search":{},"chollapse":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"exercise":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"include-codeblock":{"check":false,"edit":false,"lang":"javascript","fixlang":false,"template":"acefull","theme":"monokai","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc/intro/simple-eg.md","mtime":"2023-05-23T06:29:48.174Z","type":"markdown"},"gitbook":{"version":"4.0.7","time":"2023-05-23T06:37:57.466Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chollapse/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-octocat/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
