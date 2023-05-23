@@ -17,10 +17,10 @@ result might be as follows.
 The above program describes step-by-step how to obtain the sum of integers in an
 array. The instructions can be summarized as follows.
 
-```sh
-1. initially the total is 0
-2. for each element in the array
-3.     add the element to the running total
+```
+initially the total is 0
+for each element in the array
+    add the element to the running total
 ```
 
 Contrast the imperative program above with the functional version below.
@@ -29,9 +29,9 @@ Contrast the imperative program above with the functional version below.
 
 The functional program says this.
 
-```sh
-1. add is the function to obtain cumulative sum
-2. reduce the array elements to a value, using the function add
+```
+add is the function to obtain cumulative sum
+reduce the array elements to a value, using the function add
 ```
 
 We describe the result we want. The looping is delegated to the array method
