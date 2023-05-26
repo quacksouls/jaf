@@ -109,3 +109,10 @@ declaration should be the value of a key in the object `pet`.
 {% exercise %}{% endexercise %}
 Modify the script [`cat.js`](code/cat.js) by rewriting the object `pet` as a
 class.
+
+<!-- prettier-ignore -->
+{% exercise %}{% endexercise %}
+Implement an object `math` each of whose keys references a function to perform a
+mathematical operation. Use the following template to help you get started.
+
+[import](code/math.js)
