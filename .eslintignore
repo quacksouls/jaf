@@ -2,6 +2,7 @@
 *.json
 .git/
 _book/
+doc/hof/code/math.js
 gitbook/
 image/
 node_modules/
