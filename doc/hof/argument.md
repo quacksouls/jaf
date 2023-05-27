@@ -60,6 +60,14 @@ that accepts a callback function. Consider the following example.
 
 [import](code/alarm.js)
 
+As a final example, sometimes we need to call a function multiple times. Instead
+of using an explicit loop to invoke the function within the loop body, we opt
+for the functional approach and declare a function `repeat()`. The function has
+2 parameters: the number of times we want to invoke a function, and the name of
+the callback function. The following implementation uses anonymous function.
+
+[import](code/repeat.js)
+
 ## Pass arguments to callback functions
 
 The array method
