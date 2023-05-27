@@ -5,6 +5,15 @@ arguments to other functions. A function passed as an argument is referred to as
 a _callback_ function. We expect the callback function to be invoked by the
 function that takes the callback.
 
+Here is a common reason for having a function that can take another function as
+argument: abstraction. Modularity encourages code reuse. To modularize our code
+base, we need to abstract away those specific operations or functionalities that
+should be in separate utility/library functions. If a function `func()` requires
+a specific operation implemented by a utility function, we pass the ulitity
+function to `func()`. A function that can take another function as argument
+encourages us to think in terms of code reuse, to have utility functions each of
+which does a specific task and does it well.
+
 ## Pass a function name
 
 How exactly do we pass a callback to another function? We pass the name of the
