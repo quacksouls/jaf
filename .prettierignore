@@ -1,4 +1,5 @@
 *.json
 *.html
 doc/hof/code/math.js
+doc/hof/code/mult.js
 node_modules

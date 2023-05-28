@@ -2,7 +2,10 @@
 *.json
 .git/
 _book/
+doc/hof/code/api.js
+doc/hof/code/iwrite.js
 doc/hof/code/math.js
+doc/hof/code/mult.js
 gitbook/
 image/
 node_modules/
