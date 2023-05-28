@@ -143,6 +143,11 @@ passed to the method
 
 <!-- prettier-ignore -->
 {% exercise %}{% endexercise %}
+Modify the script [`repeat.js`](code/repeat.js) to implement the function
+`repeat()` via a recursive strategy.
+
+<!-- prettier-ignore -->
+{% exercise %}{% endexercise %}
 Without using the array method
 [`forEach()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach),
 implement your own version of `forEach()`. Your implementation should accept 2
