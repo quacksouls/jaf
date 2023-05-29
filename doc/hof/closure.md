@@ -1,5 +1,11 @@
 # Binding, scope, and closure
 
+Scoping rules are important as they help us to determine where in a program can
+a variable be used. We first discuss name binding and then delve into the
+scoping rules used by JavaScript. The idea of scope is then tied into closure,
+the concept that a function can "remember" the context wherein it was first
+defined.
+
 <!-- ================================================================= -->
 
 ## Name binding
