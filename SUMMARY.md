@@ -13,4 +13,4 @@
   - [Functions as data](doc/hof/data.md)
   - [Functions as arguments](doc/hof/argument.md)
   - [Functions as results](doc/hof/result.md)
-  - [Closure](doc/hof/closure.md)
+  - [Binding, scope, and closure](doc/hof/closure.md)
