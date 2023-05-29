@@ -1,0 +1,784 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Functions as results · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.7">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chollapse/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="closure.html" />
+    
+    
+    <link rel="prev" href="argument.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Adventures in Functional JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../preface/">
+            
+                <a href="../preface/">
+            
+                    
+                    Preface
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../preface/run.html">
+            
+                <a href="../preface/run.html">
+            
+                    
+                    Run code examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../intro/">
+            
+                <a href="../intro/">
+            
+                    
+                    Why functional programming?
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../intro/benefit.html">
+            
+                <a href="../intro/benefit.html">
+            
+                    
+                    Benefits of FP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../intro/simple-eg.html">
+            
+                <a href="../intro/simple-eg.html">
+            
+                    
+                    Simple examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../intro/exercise.html">
+            
+                <a href="../intro/exercise.html">
+            
+                    
+                    Exercises
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Higher-order functions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="first.html">
+            
+                <a href="first.html">
+            
+                    
+                    First-class functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="data.html">
+            
+                <a href="data.html">
+            
+                    
+                    Functions as data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="argument.html">
+            
+                <a href="argument.html">
+            
+                    
+                    Functions as arguments
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.4" data-path="result.html">
+            
+                <a href="result.html">
+            
+                    
+                    Functions as results
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="closure.html">
+            
+                <a href="closure.html">
+            
+                    
+                    Binding, scope, and closure
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Functions as results</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="functions-as-results">Functions as results</h1>
+<p>Within a function, we can return a function as a result. When would this feature
+ever be useful? Let&apos;s start with a simple example to help us understand why
+returning a function would be desirable in certain situations.</p>
+<!-- ================================================================= -->
+<h2 id="simple-example">Simple example</h2>
+<p>Suppose we want a function that doubles any number given to it. Consider the
+following implementation.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">double</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> x <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The above function does what is required. So what is wrong with it? Nothing,
+really. Now we want a function that triples a number. Here it is.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">triple</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> x <span class="token operator">*</span> <span class="token number">3</span><span class="token punctuation">;</span>
+</code></pre>
+<p>OK. Now a function that multiplies its argument by 10. No problem.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">tens</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> x <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The pattern is that we multiply the argument by a fixed number. Let&apos;s abstract
+the above behaviour by having a function return another function, as shown in
+the following script.</p>
+<div>
+    <div>
+        <a id="mult.js" href="code/mult.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>mult.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">// Can be simplied to this.
+// const math = (x) =&gt; (y) =&gt; x * y;
+const math = (x) =&gt; {
+    return function (y) {
+        return x * y; // value of x is fixed
+    }
+};
+
+const double = math(2);
+const triple = math(3);
+const tens = math(10);
+
+console.log(double(1));
+console.log(math(2)(1));
+
+console.log(triple(4));
+console.log(math(3)(4));
+
+console.log(tens(6));
+console.log(math(10)(6));<br></div></div>
+    <p></p>
+</div>
+
+
+<p>In the script <a href="code/mult.js"><code>mult.js</code></a>, we declare a function that returns a
+function that has 1 parameter. The function <code>math()</code> returns a function that
+accepts an argument <code>y</code>. In the body of the returned function, the value of <code>x</code>
+is already fixed. Only the value of <code>y</code> varies because we are meant to feed
+values to the returned function. To create a function that doubles its argument,
+we give the number 2 to <code>math()</code> so as to fix the value of <code>x</code> inside the body
+of the returned function. After all, 2 multiplied by a number is the doubling
+operation. To create a function that triples a given number, we pass 3 to
+<code>math()</code> to fix the value of <code>x</code>. The returned function is consequently a
+tripling function. And so on.</p>
+<p>The returned function can also be invoked like so:</p>
+<pre class="language-"><code class="lang-js"><span class="token function">math</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Doubling the number 1 is:</p>
+<pre class="language-"><code class="lang-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">math</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Tripling the number 4 is:</p>
+<pre class="language-"><code class="lang-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">math</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Multiplying the number 6 by 10 is:</p>
+<pre class="language-"><code class="lang-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">math</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<!-- ================================================================= -->
+<h2 id="partial-application">Partial application</h2>
+<p>The idea presented in the section <a href="result.html#simple-example"><em>Simple example</em></a>
+is known as <em>partial function application</em>, commonly shortened to <em>partial
+application</em>. If we have a function that takes multiple arguments, partial
+application allows us to fix one or more arguments to obtain a function of the
+remaining arguments. We can supply all arguments at once to a function. In some
+cases, we might not know ahead of time the values of all arguments, but only a
+few. Partial application allows us to supply only the first few arguments, with
+the remaining arguments being supplied as their values are known.</p>
+<p>Partial application can also be understood as a way to generalize/specialize
+functions. In the script <a href="code/mult.js"><code>mult.js</code></a> from the section
+<a href="result.html#simple-example"><em>Simple example</em></a>, the function <code>math()</code> is a
+generalized function that abstracts the idea of multiplying 2 numbers. We
+specialize <code>math()</code> by creating the function <code>double()</code> to double a number.</p>
+<p>Let&apos;s use another example to help us consolidate our understanding of partial
+application. We want to develop a simple image writer to help us manipulate and
+store pet images. Our early prototype has the following function.</p>
+<div>
+    <div>
+        <a id="iwrite.js" href="code/iwrite.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>iwrite.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const imgWriter = (format, name, width, height) =&gt; {
+    // Insert code to write image to file
+    console.log(&quot;Image is written to file&quot;);
+    console.log(`Name: ${name}`);
+    console.log(`Format: ${format}`);
+    console.log(`Dimensions: ${width} x ${height}`);
+};<br></div></div>
+    <p></p>
+</div>
+
+
+<p>Image file format comes in many varieties. Some of the common formats include
+GIF, JPEG, PNG, and SVG. Recognizing that each image format should be handled
+differently, we modify the function <code>imgWriter()</code> to use partial application.</p>
+<div>
+    <div>
+        <a id="iwrite-partial.js" href="code/iwrite-partial.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>iwrite-partial.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const imgWriter = (format) =&gt; (name, width, height) =&gt; {
+    // Insert code to write image to file
+    console.log(&quot;Image is written to file&quot;);
+    console.log(`Name: ${name}`);
+    console.log(`Format: ${format}`);
+    console.log(`Dimensions: ${width} x ${height}`);
+};
+
+const pngWriter = imgWriter(&quot;PNG&quot;);
+const jpgWriter = imgWriter(&quot;JPEG&quot;);
+const gifWriter = imgWriter(&quot;GIF&quot;);
+pngWriter(&quot;cuteCat.png&quot;, 200, 400);
+jpgWriter(&quot;puppy.jpg&quot;, 300, 600);
+gifWriter(&quot;hamsterDance.gif&quot;, 300, 400);<br></div></div>
+    <p></p>
+</div>
+
+
+<p>The function <code>imgWriter()</code> is now declared as a generalized function, taking 1
+parameter and returning a function having 3 parameters. Whenever we require a
+writer function that can handle one particular image format, we pass the name of
+the image format to <code>imgWriter()</code>, which returns a function that handles that
+particular format. Partial application allows us to specialize <code>imgWriter()</code> to
+a function that handles a specific image format.</p>
+<p>Recall that functions in JavaScript are first-class citizens. We can pass
+functions as arguments to other functions. Moreover, functions are higher-order
+because their parameters can be other functions. Combining the above 2 pieces of
+information, there is nothing stopping us from declaring a function to handle
+the partial application for us. Observe:</p>
+<div>
+    <div>
+        <a id="partial.js" href="code/partial.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>partial.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const partial = (fn, arg) =&gt; (...moreArg) =&gt; fn(arg, ...moreArg);
+const topk = (n, ...arg) =&gt; arg.slice(0, n);
+const bottomk = (n, ...arg) =&gt; arg.slice(arg.length - n);
+
+const head = partial(topk, 1);
+const top3 = partial(topk, 3);
+const tail = partial(bottomk, 1);
+const ends = (...arg) =&gt; [head(...arg), tail(...arg)].flat();
+
+console.log(head(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;));
+console.log(top3(&quot;gold&quot;, &quot;silver&quot;, &quot;bronze&quot;, &quot;fourth&quot;, &quot;fifth&quot;));
+console.log(tail(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;));
+console.log(ends(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;));<br></div></div>
+    <p></p>
+</div>
+
+
+<p>The function <code>partial()</code> is meant to partially apply an argument <code>arg</code> to a
+given function <code>fn()</code>. The definition of <code>partial()</code> is rather abstract. We
+impose no restrictions on what <code>fn()</code> should be, save for the fact that <code>fn()</code>
+should have at least 2 parameters. The first argument of <code>fn()</code> is <code>arg</code>. The
+remaining arguments are given by way of the
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters" target="_blank">rest parameter syntax</a>.
+To concretize <code>fn()</code>, we declare the function <code>topk()</code> to return the top k items
+in a sequence of items. If <code>k = 1</code>, then <code>topk()</code> would be a function that
+returns the first element in a sequence of elements, i.e. the &quot;head&quot; of a
+sequence. This is exactly what the following expression does:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> head <span class="token operator">=</span> <span class="token function">partial</span><span class="token punctuation">(</span>topk<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The function <code>top3()</code> returns the first 3 items in a sequence, the function
+<code>tail()</code> returns the last item in a sequence, and <code>ends()</code> returns the first and
+last items in a sequence.</p>
+<!-- ================================================================= -->
+<h2 id="exercises">Exercises</h2>
+<!-- prettier-ignore -->
+<p><strong>Exercise 1.</strong>
+Refer to the script <a href="code/mult.js"><code>mult.js</code></a>. Use the function <code>math()</code> to
+obtain a function that halves any given number.</p>
+<!-- prettier-ignore -->
+<p><strong>Exercise 2.</strong>
+In the script <a href="code/mult.js"><code>mult.js</code></a>, modify the function <code>math()</code> to have 2
+parameters: a number <code>x</code> and an operator. The operator should be one of the
+arithmetic operators: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>. The function <code>math()</code> returns a
+function <code>func()</code> that has 1 parameter, i.e. a number <code>y</code>. The function <code>func()</code>
+returns the result of applying the arithmetic operator on the numbers <code>x</code> and
+<code>y</code>. For example, the expression</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> increment <span class="token operator">=</span> <span class="token function">math</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&quot;+&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>should result in a function <code>increment()</code> that adds 1 to each given number. The
+expression</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> decrement <span class="token operator">=</span> <span class="token function">math</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&quot;-&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>should result in a function <code>decrement()</code> that subtracts 1 from each given
+number.</p>
+<!-- prettier-ignore -->
+<p><strong>Exercise 3.</strong>
+Modify the script <a href="code/partial.js"><code>partial.js</code></a> so that the function <code>fn()</code>
+has 2 parameters: the first parameter is a number and the second is an array.
+Modify the rest of the script accordingly.</p>
+<!-- prettier-ignore -->
+<p><strong>Exercise 4.</strong>
+A URL consists of various components:</p>
+<ol>
+<li>Scheme: The protocol for accessing a resource on the Internet.</li>
+<li>Domain: The host holding the resource.</li>
+<li>Path: The specific resource in the host.</li>
+</ol>
+<p>The following code snippet declares a function to build a URL according to the
+above components.</p>
+<div>
+    <div>
+        <a id="url.js" href="code/url.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>url.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const createURL = (scheme, domain, path) =&gt; `${scheme}://${domain}/${path}`;
+
+console.log(createURL(&quot;https&quot;, &quot;en.wikipedia.org&quot;, &quot;wiki/Duck&quot;));
+console.log(createURL(&quot;https&quot;, &quot;doi.org&quot;, &quot;10.17487/RFC2549&quot;));<br></div></div>
+    <p></p>
+</div>
+
+
+<p>Modify the function <code>createURL()</code> to use partial application.</p>
+<!-- prettier-ignore -->
+<p><strong>Exercise 5.</strong>
+Every fixed interval, you want to query an online API for some data. Your early
+script to poll the API is:</p>
+<div>
+    <div>
+        <a id="api.js" href="code/api.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>api.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const poll = () =&gt; console.log(&quot;Query API&quot;);
+const sleep = (ms) =&gt; new Promise((resolve) =&gt; setTimeout(resolve, ms));
+const spacedCall = async (n, delay) =&gt; {
+    for (let i = 0; i &lt; n; i++) {
+        await sleep(delay);
+        poll();
+    }
+    console.log(&quot;Done&quot;);
+};
+
+const delay = 1000;
+const howMany = 5;
+spacedCall(howMany, delay);<br></div></div>
+    <p></p>
+</div>
+
+
+<p>Modify the script so that <code>spacedCall()</code> is a higher-order function.</p>
+<!-- prettier-ignore -->
+<p><strong>Exercise 6.</strong>
+Declare a function that returns a random string of alphanumeric characters. For
+the purposes of this exercise, only generate strings having at most 11
+characters.</p>
+<ol>
+<li>Modify your function to allow the generation of random strings each beginning
+with a fixed prefix.</li>
+<li>Modify your function again to restrict the length of each generated string.</li>
+<li>Modify your function to be higher-order.</li>
+</ol>
+<!-- prettier-ignore -->
+<p><strong>Exercise 7.</strong>
+This exercise builds upon the head/tail example from the section
+<a href="result.html#partial-application"><em>Partial application</em></a>.</p>
+<ol>
+<li>Declare a function <code>first()</code> that takes a number <code>n</code> and a bunch of other
+arguments. The function returns the first <code>n</code> items in the bunch, excluding
+the argument <code>n</code>. Specialize the function <code>first()</code> by declaring a function
+<code>head()</code> that returns the first element of a sequence. Given the sequence
+<code>1, 2, 3, 4</code>, the function <code>head()</code> should return <code>1</code>.</li>
+<li>Declare a function <code>last()</code> that takes a number <code>n</code> and a bunch of other
+arguments. The function returns the last <code>n</code> items in the bunch, not
+including the argument <code>n</code>. Specialize the function <code>last()</code> by declaring a
+function <code>tail()</code> that returns the last element of a sequence. Given the
+sequence <code>1, 2, 3, 4</code>, the function <code>tail()</code> should return <code>4</code>.</li>
+<li>Declare a function <code>swap()</code> that takes a bunch of arguments. The function
+moves the head of the sequence and places it at the end of the sequence.
+Given the sequence <code>1, 2</code>, the function <code>swap()</code> should return <code>2, 1</code>.</li>
+<li>Names given as <code>FirstName LastName</code> are sometimes reversed as
+<code>LastName, FirstName</code> for various purposes. A common example where the
+reversal occurs is in academic publications, where scholars reference a book
+or research article by the format of <code>LastName, FirstName</code>. Use the function
+<code>swap()</code> to print <code>&quot;James Bond&quot;</code> as <code>&quot;Bond, James&quot;</code>.</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="argument.html" class="navigation navigation-prev " aria-label="Previous page: Functions as arguments">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="closure.html" class="navigation navigation-next " aria-label="Next page: Binding, scope, and closure">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Functions as results","level":"1.4.4","depth":2,"next":{"title":"Binding, scope, and closure","level":"1.4.5","depth":2,"path":"doc/hof/closure.md","ref":"doc/hof/closure.md","articles":[]},"previous":{"title":"Functions as arguments","level":"1.4.3","depth":2,"path":"doc/hof/argument.md","ref":"doc/hof/argument.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chollapse","code","include-codeblock","ace","exercise","mathjax","octocat","prism","-highlight","remove-published-with-link"],"pluginsConfig":{"prism":{},"ace":{},"octocat":{"url":"https://github.com/quacksouls/jaf"},"search":{},"chollapse":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"serif","size":2},"exercise":{},"remove-published-with-link":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"include-codeblock":{"check":false,"edit":false,"lang":"javascript","fixlang":false,"template":"acefull","theme":"monokai","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc/hof/result.md","mtime":"2023-05-28T04:37:52.619Z","type":"markdown"},"gitbook":{"version":"4.0.7","time":"2023-05-29T09:20:14.879Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chollapse/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-octocat/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-remove-published-with-link/remove-link.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

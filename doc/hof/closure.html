@@ -1,0 +1,715 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Binding, scope, and closure · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.7">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chollapse/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="result.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Adventures in Functional JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../preface/">
+            
+                <a href="../preface/">
+            
+                    
+                    Preface
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../preface/run.html">
+            
+                <a href="../preface/run.html">
+            
+                    
+                    Run code examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../intro/">
+            
+                <a href="../intro/">
+            
+                    
+                    Why functional programming?
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../intro/benefit.html">
+            
+                <a href="../intro/benefit.html">
+            
+                    
+                    Benefits of FP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../intro/simple-eg.html">
+            
+                <a href="../intro/simple-eg.html">
+            
+                    
+                    Simple examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../intro/exercise.html">
+            
+                <a href="../intro/exercise.html">
+            
+                    
+                    Exercises
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Higher-order functions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="first.html">
+            
+                <a href="first.html">
+            
+                    
+                    First-class functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="data.html">
+            
+                <a href="data.html">
+            
+                    
+                    Functions as data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="argument.html">
+            
+                <a href="argument.html">
+            
+                    
+                    Functions as arguments
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="result.html">
+            
+                <a href="result.html">
+            
+                    
+                    Functions as results
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.5" data-path="closure.html">
+            
+                <a href="closure.html">
+            
+                    
+                    Binding, scope, and closure
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Binding, scope, and closure</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="binding-scope-and-closure">Binding, scope, and closure</h1>
+<p>Scoping rules are important as they help us to determine where in a program can
+a variable be used. We first discuss name binding and then delve into the
+scoping rules used by JavaScript. The idea of scope is then tied into closure,
+the concept that a function can &quot;remember&quot; the context wherein it was first
+defined.</p>
+<!-- ================================================================= -->
+<h2 id="name-binding">Name binding</h2>
+<p><em>Name binding</em> occurs when we associate an identifier with an entity. Identifier
+means a name. Entity means data, code, or object. The most common situation
+where name binding occurs is when we declare a variable and assign it a value,
+like so:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> b <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span>
+a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+</code></pre>
+<p>In the above code snippet, we bind the variable (i.e. identifier) <code>a</code> to the
+number 1 (i.e. entity). The variable <code>b</code> is bound to the number 42. We later
+rebind <code>a</code> to the value 2. However, <code>b</code> cannot be rebound to a different (or
+same) entity because <code>b</code> was declared via the keyword
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const" target="_blank"><code>const</code></a>.
+The variable <code>a</code> initially references the number 1, but then references the
+number 2 due to a rebinding. The variable <code>b</code> can only reference the number 42
+and cannot be rebound.</p>
+<!-- ================================================================= -->
+<h3 id="mutation">Mutation</h3>
+<p>Rebinding should be distinguished from <em>mutation</em>. To rebind is to change what
+an identifier references. In the code snippet below, we first bind the variable
+<code>arr</code> to the empty string <code>&quot;&quot;</code>. We then rebind the variable to the empty array
+<code>[]</code>. We rebind by using the same identifier to reference a different entity.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+arr<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Mutation refers to a change in the entity referenced by an identifier. The code
+line <code>let arr = &quot;&quot;;</code> initially binds the identifier <code>arr</code> to the entity <code>&quot;&quot;</code>. A
+rebind then occurs in the code line <code>arr = [];</code> so that the identifier <code>arr</code> now
+references the entity <code>[]</code>, the empty array. A mutation occurs in the code line
+<code>arr.push(1);</code> because the entity (i.e. an array) referenced by <code>arr</code> is mutated
+to the array <code>[1]</code> of one element. The entity is further mutated by the code
+line <code>arr.shift();</code> so that it is now the empty array. We mutate by changing a
+referenced entity.</p>
+<!-- ================================================================= -->
+<h2 id="scope">Scope</h2>
+<p>The term <em>scope</em> refers to that portion of a program where an identifier can
+reference an entity. Not much help there. Let&apos;s approach the concept of scope as
+follows. A program generally has 2 scopes: global and local. Identifiers in the
+<em>global scope</em> are visible to every part of the program. The most common
+situation is global variables. Identifiers in the <em>local scope</em> are visible only
+within its local context. Local scope occurs when we declare a variable inside a
+function. Let&apos;s study the following script to help us understand different
+levels of scoping.</p>
+<div>
+    <div>
+        <a id="scope1.js" href="code/scope1.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>scope1.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">let a = 1;
+const fun = () =&gt; {
+    const b = 2;
+    a += b;
+};
+console.log(a);
+fun();
+console.log(a);
+console.log(b); // b is not defined in this scope<br></div></div>
+    <p></p>
+</div>
+
+
+<p>In the script <a href="code/scope1.js"><code>scope1.js</code></a>, the variable <code>a</code> is in the global
+scope because it is declared and initialized outside of any functions. The
+variable <code>a</code> is visible within any functions defined in the script. The variable
+<code>b</code> is declared and initialized inside the function <code>fun()</code>. The identifier <code>b</code>
+is thus local to the function <code>fun()</code> and cannot be used outside of the
+function. As <code>a</code> is a global variable, we can use it within <code>fun()</code>. Inside the
+function <code>fun()</code>, we rebind the global variable <code>a</code> to a different entity. The
+first print statement <code>console.log(a)</code> outputs the number 1. We then invoke the
+function <code>fun()</code> to rebind <code>a</code> to the number 3. The second print statement
+<code>console.log(a)</code> outputs the number 3. The third print statement
+<code>console.log(b)</code> results in an error because JavaScript assumes that <code>b</code> is
+declared within the global scope, where in fact <code>b</code> is visible within <code>fun()</code>
+only.</p>
+<!-- ================================================================= -->
+<h3 id="watch-out">Watch out</h3>
+<p>Using
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var" target="_blank"><code>var</code></a>
+adds another layer of complication to scoping rules. Consider the following code
+snippet:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// =&gt; 3</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// error j is not defined</span>
+</code></pre>
+<p>Within the first <code>for</code> statement, we use the keyword
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var" target="_blank"><code>var</code></a>
+to declare the variable <code>i</code> and initialize it to 0. Thus we expect <code>i</code> to be
+local to the particular <code>for</code> statement. As the first print statement shows, our
+expectation is wrong. The variable <code>i</code> can be accessed outside of the <code>for</code>
+statement. In the second <code>for</code> statement, we use the keyword
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let" target="_blank"><code>let</code></a>
+to declare the variable <code>j</code> and initialize it to 0. Both loops are identical,
+save for the fact that we use <code>var</code> and the identifier <code>i</code> in the first, and
+<code>let</code> and the identifier <code>j</code> in the second. However, the second print statement
+results in an error as would be expected. The variable <code>j</code> is declared within
+the scope of the <code>for</code> statement and should not be accessible outside of the
+statement. The moral of the story is: Use
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const" target="_blank"><code>const</code></a>
+and
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let" target="_blank"><code>let</code></a>,
+but avoid
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var" target="_blank"><code>var</code></a>
+altogether.</p>
+<!-- ================================================================= -->
+<h3 id="lexical-scope">Lexical scope</h3>
+<p>JavaScript uses <em>lexical scope</em>, otherwise known as <em>static scope</em>. The term
+lexical scope refers to the fact that JavaScript uses the lexical or <em>textual</em>
+structure of a script to determine the scope of an identifier. The scoping rules
+we discussed in the section <a href="closure.html#scope"><em>Scope</em></a> come under the rubric of
+lexical scope. As a further illustration of lexical scope, consider the
+following script:</p>
+<div>
+    <div>
+        <a id="lexical.js" href="code/lexical.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>lexical.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const a = 2;
+const fun = (x) =&gt; x + a;
+const gun = () =&gt; {
+    const a = 1;
+    return fun(0);
+};
+console.log(gun()); // =&gt; 2<br></div></div>
+    <p></p>
+</div>
+
+
+<p>The line <code>const a = 2;</code> declares <code>a</code> as a global variable and initializes it to
+the number 2. The function <code>fun()</code> has access to <code>a</code> because <code>a</code> is a global
+variable. Within the function <code>gun()</code>, the line <code>const a = 1;</code> declares a
+variable <code>a</code> and initializes it to the number 1. This second identifier <code>a</code> is
+local to the function <code>gun()</code> and different from the identifier <code>a</code> on line 1.
+When invoking the function <code>fun()</code> as <code>fun(0)</code>, we pass 0 to <code>fun()</code> and the
+function uses the global identifier <code>a</code> to return <code>0 + 2</code>, or 2. Consequently,
+the print statement <code>console.log(gun());</code> outputs the number 2.</p>
+<p>Lexical or static scope is usually contrasted with <em>dynamic scope</em>. In dynamic
+scope, an identifier is bound to the most recently assigned entity. Refer back
+to the script <a href="code/lexical.js"><code>lexical.js</code></a>. Suppose JavaScript were to use
+dynamic scope. The identifier <code>a</code> is first bound to the entity 2, then we bind
+<code>a</code> to 1. Thus 1 is the most recently bound entity of <code>a</code>. If JavaScript were to
+use dynamic scope, the print statement <code>console.log(gun());</code> would output 1.
+However, JavaScript uses lexical scope, not dynamic scope.</p>
+<!-- ================================================================= -->
+<h2 id="closure">Closure</h2>
+<p>A <em>closure</em> is a record of a function together with the environment in which the
+function was defined. The concept of closure can be illustrated in terms of a
+function defined within another function. Consider the next script.</p>
+<div>
+    <div>
+        <a id="closure.js" href="code/closure.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>closure.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const a = 1;
+
+const outer = () =&gt; {
+    const b = 2;
+    const inner = () =&gt; {
+        const c = 3;
+        return a + b + c;
+    };
+    return inner;
+};
+
+const fun = outer();
+console.log(fun()); // =&gt; 6<br></div></div>
+    <p></p>
+</div>
+
+
+<p>Let&apos;s use the rule of lexical scoping to help us understand the script
+<a href="code/closure.js"><code>closure.js</code></a>. Within the function <code>outer()</code>, we have access
+to the global variable <code>a</code> and the local variable <code>b</code>. Now consider the inner
+function <code>inner()</code>. Within the body of the function <code>inner()</code>, we have access to
+both <code>a</code> and <code>b</code>, and the local variable <code>c</code>. Invoking the function <code>outer()</code>
+would return another function, i.e. the function <code>inner()</code>, and we assign the
+resulting function to the variable <code>fun</code>, which itself is now a function.
+Functions in JavaScript are perfectly capable of returning other functions as
+results because JavaScript functions are higher-order. Printing the result of
+calling <code>fun()</code> shows that we have 6. How?</p>
+<p>The answer is closure. When the function <code>inner()</code> is declared, closure binds
+the function to the environment within which it was created. The context within
+which <code>inner()</code> was created consists of the following scopes:</p>
+<ol>
+<li>All identifiers local to <code>inner()</code>.</li>
+<li>All identifiers local to <code>outer()</code> because <code>inner()</code> is within <code>outer()</code>.</li>
+<li>All identifiers in global scope.</li>
+</ol>
+<p>Invoking the function <code>fun()</code>, where the identifier <code>fun</code> is bound to the
+definition of <code>inner()</code>, gives us access to all identifiers within the scope of
+<code>inner()</code>. That&apos;s the magic of closure.</p>
+<p>Where have we seen closure before? Although we did not mention closure in the
+section <a href="result.html"><em>Functions as results</em></a>, the concept of
+<a href="result.html#partial-application">partial application</a> relies on closure to give a
+returned function access to the context within which the function was created.
+Closure is like a data structure with context.</p>
+<!-- ================================================================= -->
+<h2 id="exercises">Exercises</h2>
+<!-- prettier-ignore -->
+<p><strong>Exercise 1.</strong>
+In the script below, explain why each print statement results in the given
+output. The variable <code>a</code> within the function <code>gun()</code> is shadowing the variable
+<code>a</code> on the first line. We should avoid shadowing variables, but shadowing is
+used here for the purpose of the exercise.</p>
+<div>
+    <div>
+        <a id="scope2.js" href="code/scope2.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>scope2.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const a = 1;
+const gun = () =&gt; {
+    const a = 2;
+    return a;
+};
+console.log(a); // =&gt; 1
+console.log(gun()); // =&gt; 2
+console.log(a); // =&gt; 1<br></div></div>
+    <p></p>
+</div>
+
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="result.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Functions as results">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Binding, scope, and closure","level":"1.4.5","depth":2,"previous":{"title":"Functions as results","level":"1.4.4","depth":2,"path":"doc/hof/result.md","ref":"doc/hof/result.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chollapse","code","include-codeblock","ace","exercise","mathjax","octocat","prism","-highlight","remove-published-with-link"],"pluginsConfig":{"prism":{},"ace":{},"octocat":{"url":"https://github.com/quacksouls/jaf"},"search":{},"chollapse":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"serif","size":2},"exercise":{},"remove-published-with-link":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"include-codeblock":{"check":false,"edit":false,"lang":"javascript","fixlang":false,"template":"acefull","theme":"monokai","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc/hof/closure.md","mtime":"2023-05-29T09:13:13.252Z","type":"markdown"},"gitbook":{"version":"4.0.7","time":"2023-05-29T09:20:14.879Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chollapse/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-octocat/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-remove-published-with-link/remove-link.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

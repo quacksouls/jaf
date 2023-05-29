@@ -201,6 +201,90 @@
             
         </li>
     
+        <li class="chapter " data-level="1.4" data-path="doc/hof/">
+            
+                <a href="doc/hof/">
+            
+                    
+                    Higher-order functions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="doc/hof/first.html">
+            
+                <a href="doc/hof/first.html">
+            
+                    
+                    First-class functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="doc/hof/data.html">
+            
+                <a href="doc/hof/data.html">
+            
+                    
+                    Functions as data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="doc/hof/argument.html">
+            
+                <a href="doc/hof/argument.html">
+            
+                    
+                    Functions as arguments
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="doc/hof/result.html">
+            
+                <a href="doc/hof/result.html">
+            
+                    
+                    Functions as results
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="doc/hof/closure.html">
+            
+                <a href="doc/hof/closure.html">
+            
+                    
+                    Binding, scope, and closure
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -261,6 +345,17 @@ Modified the theme of linked file names. The customized theme is
 <a href="gitbook/gitbook-plugin-include-codeblock/templates/acefull-template.hbs">here</a>.
 The styling is based upon
 <a href="https://github.com/litmon/gitbook-plugin-codeblock-filename/blob/master/book/block.css" target="_blank"><code>codeblock-filename</code></a>.</li>
+<li><a href="https://github.com/gaearon/gitbook-plugin-prism" target="_blank">prism</a>: In the file
+<a href="https://github.com/gaearon/gitbook-plugin-prism/blob/master/package.json" target="_blank"><code>package.json</code></a>,
+we replaced the lines<pre class="language-"><code class="lang-js"><span class="token string-property property">&quot;engines&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token string-property property">&quot;gitbook&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&gt;=2.4.1 &lt;4.0.0&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre>
+with<pre class="language-"><code class="lang-js"><span class="token string-property property">&quot;engines&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token string-property property">&quot;gitbook&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&gt;=2.4.1&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre>
+</li>
 </ul>
 <!-- ====================================================================== -->
 <h2 id="acknowledgement">Acknowledgement</h2>
@@ -314,7 +409,7 @@ the full text of the license.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Adventures in Functional JavaScript","level":"1.1","depth":1,"next":{"title":"Preface","level":"1.2","depth":1,"path":"doc/preface/README.md","ref":"doc/preface/README.md","articles":[{"title":"Run code examples","level":"1.2.1","depth":2,"path":"doc/preface/run.md","ref":"doc/preface/run.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chollapse","code","include-codeblock","ace","exercise","mathjax","octocat","prism","-highlight"],"pluginsConfig":{"prism":{},"ace":{},"octocat":{"url":"https://github.com/quacksouls/jaf"},"search":{},"chollapse":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"exercise":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"include-codeblock":{"check":false,"edit":false,"lang":"javascript","fixlang":false,"template":"acefull","theme":"monokai","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2023-05-21T08:48:09.882Z","type":"markdown"},"gitbook":{"version":"4.0.7","time":"2023-05-23T06:37:57.466Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Adventures in Functional JavaScript","level":"1.1","depth":1,"next":{"title":"Preface","level":"1.2","depth":1,"path":"doc/preface/README.md","ref":"doc/preface/README.md","articles":[{"title":"Run code examples","level":"1.2.1","depth":2,"path":"doc/preface/run.md","ref":"doc/preface/run.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chollapse","code","include-codeblock","ace","exercise","mathjax","octocat","prism","-highlight","remove-published-with-link"],"pluginsConfig":{"prism":{},"ace":{},"octocat":{"url":"https://github.com/quacksouls/jaf"},"search":{},"chollapse":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"serif","size":2},"exercise":{},"remove-published-with-link":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"include-codeblock":{"check":false,"edit":false,"lang":"javascript","fixlang":false,"template":"acefull","theme":"monokai","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2023-05-23T08:15:50.485Z","type":"markdown"},"gitbook":{"version":"4.0.7","time":"2023-05-29T09:20:14.879Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -393,6 +488,10 @@ the full text of the license.</p>
     
         
         <script src="gitbook/gitbook-plugin-octocat/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-remove-published-with-link/remove-link.js"></script>
         
     
         

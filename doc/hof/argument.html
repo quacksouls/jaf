@@ -1,0 +1,874 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Functions as arguments · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.7">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chollapse/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="result.html" />
+    
+    
+    <link rel="prev" href="data.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Adventures in Functional JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../preface/">
+            
+                <a href="../preface/">
+            
+                    
+                    Preface
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../preface/run.html">
+            
+                <a href="../preface/run.html">
+            
+                    
+                    Run code examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../intro/">
+            
+                <a href="../intro/">
+            
+                    
+                    Why functional programming?
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../intro/benefit.html">
+            
+                <a href="../intro/benefit.html">
+            
+                    
+                    Benefits of FP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../intro/simple-eg.html">
+            
+                <a href="../intro/simple-eg.html">
+            
+                    
+                    Simple examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../intro/exercise.html">
+            
+                <a href="../intro/exercise.html">
+            
+                    
+                    Exercises
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Higher-order functions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="first.html">
+            
+                <a href="first.html">
+            
+                    
+                    First-class functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="data.html">
+            
+                <a href="data.html">
+            
+                    
+                    Functions as data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3" data-path="argument.html">
+            
+                <a href="argument.html">
+            
+                    
+                    Functions as arguments
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="result.html">
+            
+                <a href="result.html">
+            
+                    
+                    Functions as results
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="closure.html">
+            
+                <a href="closure.html">
+            
+                    
+                    Binding, scope, and closure
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Functions as arguments</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="functions-as-arguments">Functions as arguments</h1>
+<p>As functions are treated like data in JavaScript, we can pass functions as
+arguments to other functions. A function passed as an argument is referred to as
+a <em>callback</em> function. We expect the callback function to be invoked by the
+function that takes the callback.</p>
+<p>Here is a common reason for having a function that can take another function as
+argument: abstraction. Modularity encourages code reuse. To modularize our code
+base, we need to abstract away those specific operations or functionalities that
+should be in separate utility/library functions. If a function <code>func()</code> requires
+a specific operation implemented by a utility function, we pass the ulitity
+function to <code>func()</code>. A function that can take another function as argument
+encourages us to think in terms of code reuse, to have utility functions each of
+which does a specific task and does it well.</p>
+<h2 id="pass-a-function-name">Pass a function name</h2>
+<p>How exactly do we pass a callback to another function? We pass the name of the
+callback to whichever function <code>func()</code> that accepts a callback. The function
+<code>func()</code> would then have a reference it can use to invoke the callback. Consider
+the following example.</p>
+<div>
+    <div>
+        <a id="joy.js" href="code/joy.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>joy.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const joy = () =&gt; console.log(&quot;Yay! \\o/&quot;);
+const emotion = (callback) =&gt; {
+    console.log(&quot;My current mood&quot;);
+    callback(); // invoke the callback
+};
+
+emotion(joy); // pass name of callback<br></div></div>
+    <p></p>
+</div>
+
+
+<p>We pass the name of the function <code>joy()</code> to the function <code>emotion()</code>. Note that
+we pass the name <code>joy</code> to <code>emotion()</code> to result in the expression
+<code>emotion(joy)</code>.</p>
+<p>Why not have the expression <code>emotion(joy())</code>? Consider the following example.</p>
+<div>
+    <div>
+        <a id="joy-error.js" href="code/joy-error.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>joy-error.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const joy = () =&gt; console.log(&quot;Yay! \\o/&quot;);
+const emotion = (callback) =&gt; {
+    console.log(&quot;My current mood&quot;);
+    callback(); // invoke the callback
+};
+
+emotion(joy()); // pass result of function call<br></div></div>
+    <p></p>
+</div>
+
+
+<p>We are not passing the name of a function, but rather execute the function
+<code>joy()</code> and pass the result of the invocation to <code>emotion()</code>. The result of the
+invocation <code>joy()</code> is
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined" target="_blank"><code>undefined</code></a>
+because the method
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Console/log" target="_blank"><code>console.log()</code></a>
+does not have a return value. In the body of <code>emotion()</code> where it attempts to
+invoke the callback function, i.e. the expression</p>
+<pre class="language-"><code class="lang-js"><span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>we would receive an error because
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined" target="_blank"><code>undefined</code></a>
+is not a function. When passing a function as an argument, we pass the name of
+the function, not invoke the function.</p>
+<p>Many methods in the
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank">standard JavaScript library</a>
+accept a callback function. For example, the array method
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" target="_blank"><code>forEach()</code></a>
+takes a callback function. The method iterates over each element of a given
+array and invokes the callback on the current element. Here is an example of the
+method
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" target="_blank"><code>forEach()</code></a>
+in action.</p>
+<div>
+    <div>
+        <a id="fruit.js" href="code/fruit.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>fruit.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const fruit = [&quot;apricot&quot;, &quot;banana&quot;, &quot;carambola&quot;];
+const print = (name) =&gt; console.log(name);
+fruit.forEach(print);<br></div></div>
+    <p></p>
+</div>
+
+
+<p>Anonymous functions can be used as callback functions. The method
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/setTimeout" target="_blank"><code>setTimeout()</code></a> is
+another method from the
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank">standard JavaScript library</a>
+that accepts a callback function. Consider the following example.</p>
+<div>
+    <div>
+        <a id="alarm.js" href="code/alarm.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>alarm.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const alarm = (n) =&gt; {
+    if (n &lt; 1) {
+        console.log(&quot;Tick tock, Mr. Wick.&quot;);
+        return;
+    }
+
+    console.log(n);
+    const delay = 1000;
+    setTimeout(() =&gt; alarm(n - 1), delay);
+};
+
+alarm(5);<br></div></div>
+    <p></p>
+</div>
+
+
+<p>As a final example, sometimes we need to call a function multiple times. Instead
+of using an explicit loop to invoke the function within the loop body, we opt
+for the functional approach and declare a function <code>repeat()</code>. The function has
+2 parameters: the number of times we want to invoke a function, and the name of
+the callback function. The following implementation uses anonymous function.</p>
+<div>
+    <div>
+        <a id="repeat.js" href="code/repeat.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>repeat.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const repeat = (n, fn) =&gt; {
+    [...Array(n).keys()].forEach(() =&gt; fn());
+};
+
+const hi = () =&gt; console.log(&quot;Hello&quot;);
+repeat(3, hi);<br></div></div>
+    <p></p>
+</div>
+
+
+<h2 id="pass-arguments-to-callback-functions">Pass arguments to callback functions</h2>
+<p>The array method
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" target="_blank"><code>forEach()</code></a>
+takes a callback function and implicitly passes each array element to the
+callback, one at a time. How would we explicitly pass an argument to a callback
+function? The function accepting a callback must also take an argument to be
+passed to the callback. By way of illustration, the next example declares a
+function <code>speak()</code> that takes a callback and a parameter to be passed to the
+callback.</p>
+<div>
+    <div>
+        <a id="speak.js" href="code/speak.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>speak.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const speak = (callback, name) =&gt; callback(name);
+const cat = (name) =&gt; console.log(`${name} says meow`);
+const dog = (name) =&gt; console.log(`${name} says woof`);
+
+speak(cat, &quot;Tabby&quot;);
+speak(dog, &quot;Fido&quot;);<br></div></div>
+    <p></p>
+</div>
+
+
+<p>Here&apos;s a more complicated example. We want a function <code>keep()</code> that has 2
+parameters: a callback function and an array. The function <code>keep()</code> invokes the
+callback on each element of the given array. The callback returns <code>true</code> if the
+argument given to it passes a test; returns <code>false</code> otherwise. The function
+<code>keep()</code> returns an array of all elements of the given array that pass the test
+implemented by the callback. For concreteness, consider the following script.</p>
+<div>
+    <div>
+        <a id="keep.js" href="code/keep.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>keep.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const keep = (callback, arr) =&gt; {
+    const newArr = [];
+    for (const a of arr) {
+        if (callback(a)) {
+            newArr.push(a);
+        }
+    }
+    return newArr;
+};
+
+const isPet = (name) =&gt; {
+    switch (name) {
+        case &quot;bird&quot;:
+        case &quot;cat&quot;:
+        case &quot;dog&quot;:
+        case &quot;hamster&quot;:
+            return true;
+        default:
+            return false;
+    }
+};
+
+const pet = keep(isPet, [&quot;bard&quot;, &quot;cat&quot;, &quot;dog&quot;, &quot;ham&quot;]);
+console.log(pet);<br></div></div>
+    <p></p>
+</div>
+
+
+<p>Our callback is the function <code>isPet()</code>, which returns <code>true</code> if a string
+represents a pet animal and <code>false</code> otherwise. We pass the function name <code>isPet</code>
+to the function <code>keep()</code>, together with an array of strings. The function
+<code>keep()</code> invokes <code>isPet()</code> on each element of the array and returns an array of
+strings that represent pet animals. As a side note, the function <code>keep()</code> mimics
+the array method
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank"><code>filter()</code></a>.</p>
+<p>The next example illustrates the power of functions whose parameters consist of
+other functions. The static method
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max" target="_blank"><code>Math.max()</code></a>
+takes 1 or more numbers and returns the maximum of the given numbers. We want to
+implement a general version of <code>Math.max()</code>. Before we get to the general, we
+start with the particular. Consider the following implementation.</p>
+<div>
+    <div>
+        <a id="max.js" href="code/max.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>max.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const max = (arr) =&gt; {
+    let high = arr[0];
+    arr.forEach((e) =&gt; {
+        high = Math.max(high, e);
+    });
+    return high;
+};
+
+const array = [27, 35, 49, 23, 4, 1, 46, 6, 12, 1];
+console.log(max(array));<br></div></div>
+    <p></p>
+</div>
+
+
+<p>In order to generalize our function <code>max()</code>, we must abstract away this
+particular expression:</p>
+<pre class="language-"><code class="lang-js">high <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>high<span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The method <code>Math.max()</code> assumes numeric data, hence would fail to compare other
+data types such as objects or strings. We want to pass to <code>max()</code> a callback
+function whose job is to serve as a maximum function. If the array given to
+<code>max()</code> consists of strings, the callback should be able to deal with strings
+and return the &quot;maximum&quot; of 2 strings. If the array consists of objects, the
+callback should return the &quot;maximum&quot; of 2 objects. In the following script, we
+abstract away the above line and invoke the callback on 2 array elements.</p>
+<div>
+    <div>
+        <a id="max-fn.js" href="code/max-fn.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>max-fn.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const max = (fn, arr) =&gt; {
+    let high = arr[0];
+    arr.forEach((e) =&gt; {
+        high = fn(high, e);
+    });
+    return high;
+};
+
+const language = [
+    &quot;Ada&quot;,
+    &quot;Alice&quot;,
+    &quot;Claire&quot;,
+    &quot;JADE&quot;,
+    &quot;JEAN&quot;,
+    &quot;LISA&quot;,
+    &quot;Julia&quot;,
+    &quot;Mary&quot;,
+    &quot;Miranda&quot;,
+];
+const number = [2, 45, 7, 1, 7, 13, 0, 5];
+const pet = [
+    { name: &quot;Tabby&quot;, age: 2 },
+    { name: &quot;Fido&quot;, age: 1 },
+    { name: &quot;Iegor&quot;, age: 3 },
+    { name: &quot;Hamsuke&quot;, age: 2 },
+];
+const oldest = (a, b) =&gt; (a.age &lt; b.age ? b : a);
+const longest = (a, b) =&gt; (a.length &lt; b.length ? b : a);
+
+console.log(max(Math.max, number));
+console.log(max(oldest, pet));
+console.log(max(longest, language));<br></div></div>
+    <p></p>
+</div>
+
+
+<h2 id="exercises">Exercises</h2>
+<!-- prettier-ignore -->
+<p><strong>Exercise 1.</strong>
+Modify the script <a href="code/fruit.js"><code>fruit.js</code></a> so that an anonymous function is
+passed to the method
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" target="_blank"><code>forEach()</code></a>.</p>
+<!-- prettier-ignore -->
+<p><strong>Exercise 2.</strong>
+Modify the script <a href="code/repeat.js"><code>repeat.js</code></a> to implement the function
+<code>repeat()</code> via a recursive strategy.</p>
+<!-- prettier-ignore -->
+<p><strong>Exercise 3.</strong>
+Without using the array method
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" target="_blank"><code>forEach()</code></a>,
+implement your own version of <code>forEach()</code>. Your implementation should accept 2
+parameters: a callback function and an array.</p>
+<!-- prettier-ignore -->
+<p><strong>Exercise 4.</strong>
+Implement a function <code>sleep()</code> that takes 2 parameters: a callback function and
+the number of milliseconds to sleep. Model the parameters upon the method
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/setTimeout" target="_blank"><code>setTimeout()</code></a>,
+but do not use the method in your implementation. Modify the script
+<a href="code/alarm.js"><code>alarm.js</code></a> to use your function <code>sleep()</code>.</p>
+<!-- prettier-ignore -->
+<p><strong>Exercise 5.</strong>
+A function that accepts a callback can use the operator
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof" target="_blank"><code>typeof</code></a>
+to check that the passed in function is indeed a function. Modify the script
+<a href="code/keep.js"><code>keep.js</code></a> to ensure that, in the function <code>keep()</code>, the
+parameter <code>callback</code> is indeed a function.</p>
+<!-- prettier-ignore -->
+<p><strong>Exercise 6.</strong>
+Refer to the function <code>keep()</code> from the script <a href="code/keep.js"><code>keep.js</code></a>.
+Implement a callback function that returns <code>true</code> if a number is even and
+returns <code>false</code> otherwise. Test your callback function against an array of all
+integers between 0 and 10, inclusive.</p>
+<!-- prettier-ignore -->
+<p><strong>Exercise 7.</strong>
+Declare a function <code>every()</code> having 2 parameters: a callback function and an
+array. The function <code>every()</code> returns <code>true</code> if each element in the array passes
+the test implemented by the callback function. If one of the array elements does
+not pass the test implemented by the callback, then <code>every()</code> returns <code>false</code>.
+As an example, declare your callback to be a function that returns <code>true</code> if a
+character is part of the English alphabet and <code>false</code> otherwise. Do not use the
+array method
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every" target="_blank"><code>every()</code></a>.</p>
+<!-- prettier-ignore -->
+<p><strong>Exercise 8.</strong>
+This is similar to the previous exercise, but with a twist. Declare a function
+<code>some()</code> that has 2 parameters: a callback and an array. The function <code>some()</code>
+returns <code>true</code> if one of the array elements satisfies the test implemented by
+the callback. In case the callback returns <code>false</code> for each array element, then
+<code>some()</code> returns <code>false</code>. For concreteness, declare your callback to be a
+function that returns <code>true</code> if an integer is even and <code>false</code> otherwise. Do not
+use the array method
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some" target="_blank"><code>some()</code></a>.</p>
+<!-- prettier-ignore -->
+<p><strong>Exercise 9.</strong>
+Consider an array <code>arr</code> of all integers between 0 and 100, inclusive. Use your
+function <code>some()</code> to help you determine whether <code>arr</code> has a particular element.
+For example, use <code>some()</code> to test whether <code>arr</code> has the integer 42. Now test to
+see whether <code>arr</code> has the number 101.</p>
+<!-- prettier-ignore -->
+<p><strong>Exercise 10.</strong>
+The array method
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort" target="_blank"><code>sort()</code></a>
+accepts a function <code>compareFn()</code> that implements a sorting order. The method
+passes 2 array elements <code>a</code> and <code>b</code> to the compare function <code>compareFn()</code>, which
+should return one of the following results:</p>
+<ol>
+<li>A positive integer if <code>a</code> comes after <code>b</code>, i.e. the ordering <code>[b, a]</code>.</li>
+<li>A negative integer if <code>a</code> precedes <code>b</code>, i.e. the ordering <code>[a, b]</code>.</li>
+<li>Zero if the original ordering is to be kept.</li>
+</ol>
+<p>To sort an array of integers in non-decreasing order, our compare function can
+be:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">ascend</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> a <span class="token operator">-</span> b<span class="token punctuation">;</span>
+</code></pre>
+<p>Use the above compare function to sort the following array:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">45</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Declare a compare function that sorts an array in non-increasing order.</p>
+<!-- prettier-ignore -->
+<p><strong>Exercise 11.</strong>
+Implement a function <code>map()</code> having 2 parameters: a callback function and an
+array. The function <code>map()</code> applies the callback on each element of the array
+and returns an array of results from invoking the callback. Do not use the array
+method
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank"><code>map()</code></a>.</p>
+<ol>
+<li>Implement <code>map()</code> using either a <code>for</code> or <code>while</code> loop.</li>
+<li>Rewrite your implementation to not use either of <code>for</code> or <code>while</code>.</li>
+<li>Declare your callback to be a function that increments a number by 1. Use
+this function to test your <code>map()</code>.</li>
+<li>Declare a callback that squares a number. Use this function to test your
+<code>map()</code>.</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="data.html" class="navigation navigation-prev " aria-label="Previous page: Functions as data">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="result.html" class="navigation navigation-next " aria-label="Next page: Functions as results">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Functions as arguments","level":"1.4.3","depth":2,"next":{"title":"Functions as results","level":"1.4.4","depth":2,"path":"doc/hof/result.md","ref":"doc/hof/result.md","articles":[]},"previous":{"title":"Functions as data","level":"1.4.2","depth":2,"path":"doc/hof/data.md","ref":"doc/hof/data.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chollapse","code","include-codeblock","ace","exercise","mathjax","octocat","prism","-highlight","remove-published-with-link"],"pluginsConfig":{"prism":{},"ace":{},"octocat":{"url":"https://github.com/quacksouls/jaf"},"search":{},"chollapse":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"serif","size":2},"exercise":{},"remove-published-with-link":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"include-codeblock":{"check":false,"edit":false,"lang":"javascript","fixlang":false,"template":"acefull","theme":"monokai","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc/hof/argument.md","mtime":"2023-05-28T08:50:47.333Z","type":"markdown"},"gitbook":{"version":"4.0.7","time":"2023-05-29T09:20:14.879Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chollapse/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-octocat/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-remove-published-with-link/remove-link.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

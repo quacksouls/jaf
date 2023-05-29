@@ -1,0 +1,704 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Functions as data · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.7">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chollapse/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="argument.html" />
+    
+    
+    <link rel="prev" href="first.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Adventures in Functional JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../preface/">
+            
+                <a href="../preface/">
+            
+                    
+                    Preface
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../preface/run.html">
+            
+                <a href="../preface/run.html">
+            
+                    
+                    Run code examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../intro/">
+            
+                <a href="../intro/">
+            
+                    
+                    Why functional programming?
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../intro/benefit.html">
+            
+                <a href="../intro/benefit.html">
+            
+                    
+                    Benefits of FP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../intro/simple-eg.html">
+            
+                <a href="../intro/simple-eg.html">
+            
+                    
+                    Simple examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../intro/exercise.html">
+            
+                <a href="../intro/exercise.html">
+            
+                    
+                    Exercises
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Higher-order functions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="first.html">
+            
+                <a href="first.html">
+            
+                    
+                    First-class functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.2" data-path="data.html">
+            
+                <a href="data.html">
+            
+                    
+                    Functions as data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="argument.html">
+            
+                <a href="argument.html">
+            
+                    
+                    Functions as arguments
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="result.html">
+            
+                <a href="result.html">
+            
+                    
+                    Functions as results
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="closure.html">
+            
+                <a href="closure.html">
+            
+                    
+                    Binding, scope, and closure
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Functions as data</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="functions-as-data">Functions as data</h1>
+<p>A function in JavaScript is treated like data. How? We can assign a function to
+a variable and store a function in a data structure.</p>
+<!-- ================================================================= -->
+<h2 id="assign-to-variable">Assign to variable</h2>
+<p>One way to define a function is to use the
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function" target="_blank"><code>function</code> declaration</a>
+as demonstrated in the next example:</p>
+<div>
+    <div>
+        <a id="function-declare.js" href="code/function-declare.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>function-declare.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">function greet(name) {
+    return `Hello, ${name}`;
+}
+console.log(greet(&quot;Sam&quot;));<br></div></div>
+    <p></p>
+</div>
+
+
+<p>To assign a function to a variable, all we have to do is assign the <code>function</code>
+declaration to a variable, like so:</p>
+<div>
+    <div>
+        <a id="function-assign.js" href="code/function-assign.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>function-assign.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const hi = function greet(name) {
+    return `Hello, ${name}`;
+};
+console.log(hi(&quot;Sam&quot;));<br></div></div>
+    <p></p>
+</div>
+
+
+<p>A second way to assign a function to a variable is to declare an
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function" target="_blank">anonymous function</a>
+and assign the function expression to a variable.</p>
+<div>
+    <div>
+        <a id="function-anon.js" href="code/function-anon.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>function-anon.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const greet = function (name) {
+    return `Hello, ${name}`;
+};
+console.log(greet(&quot;Alex&quot;));<br></div></div>
+    <p></p>
+</div>
+
+
+<p>A third way is to declare the function as an
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank">arrow function expression</a>
+and assign the function expression to a variable.</p>
+<div>
+    <div>
+        <a id="function-arrow.js" href="code/function-arrow.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>function-arrow.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const greet = (name) =&gt; `Hello, ${name}`;
+console.log(greet(&quot;Ashlie&quot;));<br></div></div>
+    <p></p>
+</div>
+
+
+<p>Treating functions like data also allows us to rename functions without changing
+their declarations. Have you ever encountered a function name that is rather
+long and unwieldy to type? Like <code>myAwesomeRoutine()</code>? You do not need to change
+the function name wherever it occurs in a bunch of source files. Simply assign
+the function to a shorter variable name. Here is an example.</p>
+<div>
+    <div>
+        <a id="rename.js" href="code/rename.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>rename.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const politeSalutation = (name) =&gt; `Hello, ${name}`;
+const hi = politeSalutation;
+console.log(politeSalutation(&quot;Sammy&quot;));
+console.log(hi(&quot;Sam&quot;));<br></div></div>
+    <p></p>
+</div>
+
+
+<!-- ================================================================= -->
+<h2 id="store-in-data-structure">Store in data structure</h2>
+<p>Primitive data like strings and numbers can be stored in data structures such as
+arrays, sets, maps, and objects. We learnt from the section
+<a href="data.html#assign-to-variable"><em>Assign to variable</em></a> that JavaScript treats
+functions as if they were data. We would expect to be able to store functions in
+data structures in the same way as we can store strings and numbers in data
+structures. Indeed we can, as shown in the next example.</p>
+<div>
+    <div>
+        <a id="noise.js" href="code/noise.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>noise.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">// Store functions inside an array.
+const bird = () =&gt; &quot;tweet&quot;;
+const cat = () =&gt; &quot;meow&quot;;
+const dog = () =&gt; &quot;woof&quot;;
+for (const pet of [bird, cat, dog]) {
+    console.log(pet());
+}<br></div></div>
+    <p></p>
+</div>
+
+
+<p>We can take this concept further by embedding functions inside objects. That is
+essentially how JavaScript supports the concept of a
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" target="_blank">class</a>.
+Here is an example on how to assign a function as a value of an object key.</p>
+<div>
+    <div>
+        <a id="cat.js" href="code/cat.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>cat.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">// Store functions inside an object.
+const pet = {
+    name: &quot;Tabby Whiskers&quot;,
+    purr: () =&gt; console.log(&quot;Purrrr&quot;),
+    like: (food) =&gt; food === &quot;fish&quot;,
+};
+
+console.log(pet.name);
+pet.purr();
+console.log(`Likes fish? ${pet.like(&quot;fish&quot;)}`);
+console.log(`Likes lemon? ${pet.like(&quot;lemon&quot;)}`);<br></div></div>
+    <p></p>
+</div>
+
+
+<!-- ================================================================= -->
+<h2 id="exercises">Exercises</h2>
+<!-- prettier-ignore -->
+<p><strong>Exercise 1.</strong>
+In the following function declaration, the function name is rather long. Change
+the function name to a shorter, descriptive name without changing the function
+declaration.</p>
+<div>
+    <div>
+        <a id="life.js" href="code/life.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>life.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">function meaningOfLife() {
+    return &quot;Try and be nice to people&quot;;
+}<br></div></div>
+    <p></p>
+</div>
+
+
+<!-- prettier-ignore -->
+<p><strong>Exercise 2.</strong>
+A principle of readable code is: Choose a &quot;good&quot; function/variable name. How do
+we choose a &quot;good&quot; name for our function or variable? See <em>Chapter 11: The Power
+of Variable Names</em> of the following book:</p>
+<!-- prettier-ignore -->
+<ul>
+<li>Steve McConnell. <em>Code Complete.</em> 2nd edition, Microsoft Press, 2004.</li>
+</ul>
+<!-- prettier-ignore -->
+<p><strong>Exercise 3.</strong>
+Choosing a &quot;good&quot; function/variable name is part of what makes good programming
+style. The following texts offer some guidelines worth reading:</p>
+<!-- prettier-ignore -->
+<ul>
+<li>Brian W. Kernighan and P. J. Plauger. <em>The Elements of Programming Style.</em>
+2nd edition, McGraw-Hill, 1978.</li>
+<li>Henry F. Ledgard. <em>Programming Proverbs: Principles of Good Programming with
+Numerous Examples to Improve Programming Style and Proficiency.</em> Hayden Book
+Company, 1975.</li>
+</ul>
+<!-- prettier-ignore -->
+<p><strong>Exercise 4.</strong>
+Modify the script <a href="code/noise.js"><code>noise.js</code></a> to store the given functions
+inside a
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set" target="_blank">set</a>.
+Repeat the exercise, but store the functions inside a
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map" target="_blank">map</a>.</p>
+<!-- prettier-ignore -->
+<p><strong>Exercise 5.</strong>
+Tabby does not like lemons. Modify the script <a href="code/cat.js"><code>cat.js</code></a> to declare
+a function that returns whether Tabby dislikes a particular food. The function
+declaration should be the value of a key in the object <code>pet</code>.</p>
+<!-- prettier-ignore -->
+<p><strong>Exercise 6.</strong>
+Modify the script <a href="code/cat.js"><code>cat.js</code></a> by rewriting the object <code>pet</code> as a
+class.</p>
+<!-- prettier-ignore -->
+<p><strong>Exercise 7.</strong>
+Implement an object <code>math</code> each of whose keys references a function to perform a
+mathematical operation. Use the following template to help you get started.</p>
+<div>
+    <div>
+        <a id="math.js" href="code/math.js" style="background-color: rgba(0,0,0,0.04); display: inline-block; padding: 2px 4px; line-height: inherit; margin-bottom: 0px !important;">
+            <code>math.js</code>
+        </a>
+    </div>
+    <div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:false,&quot;lang&quot;:&quot;javascript&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">const math = {
+    max: (a, b) =&gt; /* Code for maximum of 2 numbers */,
+    min: (a, b) =&gt; /* Code for minimum of 2 numbers */,
+    square: (x) =&gt; /* Code for the square of a number */,
+};
+
+console.log(math.max(3, 2)); // =&gt; 3
+console.log(math.min(3, 2)); // =&gt; 2
+console.log(math.square(4)); // =&gt; 16<br></div></div>
+    <p></p>
+</div>
+
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="first.html" class="navigation navigation-prev " aria-label="Previous page: First-class functions">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="argument.html" class="navigation navigation-next " aria-label="Next page: Functions as arguments">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Functions as data","level":"1.4.2","depth":2,"next":{"title":"Functions as arguments","level":"1.4.3","depth":2,"path":"doc/hof/argument.md","ref":"doc/hof/argument.md","articles":[]},"previous":{"title":"First-class functions","level":"1.4.1","depth":2,"path":"doc/hof/first.md","ref":"doc/hof/first.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chollapse","code","include-codeblock","ace","exercise","mathjax","octocat","prism","-highlight","remove-published-with-link"],"pluginsConfig":{"prism":{},"ace":{},"octocat":{"url":"https://github.com/quacksouls/jaf"},"search":{},"chollapse":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"serif","size":2},"exercise":{},"remove-published-with-link":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"include-codeblock":{"check":false,"edit":false,"lang":"javascript","fixlang":false,"template":"acefull","theme":"monokai","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc/hof/data.md","mtime":"2023-05-26T07:30:21.695Z","type":"markdown"},"gitbook":{"version":"4.0.7","time":"2023-05-29T09:20:14.879Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chollapse/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-octocat/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-remove-published-with-link/remove-link.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
