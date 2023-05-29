@@ -4,8 +4,11 @@
 _book/
 doc/hof/code/api.js
 doc/hof/code/iwrite.js
+doc/hof/code/lexical.js
 doc/hof/code/math.js
 doc/hof/code/mult.js
+doc/hof/code/scope1.js
+doc/hof/code/scope2.js
 gitbook/
 image/
 node_modules/
